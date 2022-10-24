@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+        <div class="mb-3">
+            <p>
+                NAME: {{ quote["name"] }}({{ quote["symbol"] }})
+            </p>
+            <p>
+                PRICE: {{ quote["price"] | usd }}
+            </p>
+        </div>
+{% endblock %}
