@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+             function botao(event)
+             {
+                var resposta = event.srcElement;
+                var r = resposta.innerHTML;
+                if (r == "15"){
+                    resposta.style.backgroundColor = "green";
+                    document.querySelector("#resultado1").innerHTML = "correct";
+                }
+                else {
+                    resposta.style.backgroundColor = "red";
+                    document.querySelector("#resultado1").innerHTML = "incorrect";
+                }
+             }
+
+             function responder(event)
+             {
+                var form = document.querySelector("#resposta_full");
+                var s = form.value;
+                if (s == "dingding"){
+                    document.querySelector("#resultado2").innerHTML = "correct";
+                    form.style.backgroundColor = "green";
+                }
+                else{
+                    document.querySelector("#resultado2").innerHTML = "incorrect";
+                    form.style.backgroundColor = "red";
+                }
+             }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3> What number comes after 14?</h3>
+                <button onclick="botao(event)">11</button>
+                <button onclick="botao(event)">12</button>
+                <button onclick="botao(event)">13</button>
+                <button onclick="botao(event)">14</button>
+                <button onclick="botao(event)">15</button>
+                <p id="resultado1"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What does the fox say?</h3>
+                <input id="resposta_full" type="text" placeholder="resposta"></input>
+                <button id="cheque" onclick="responder(event)">Checar</button>
+                <p id="resultado2"></p>
+
+            </div>
+        </div>
+    </body>
+</html>
