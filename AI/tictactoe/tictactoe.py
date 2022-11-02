@@ -75,7 +75,6 @@ def terminal(board):
 
 
 
-
 def utility(board):
     win = winner(board)
     if win:
